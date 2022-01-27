@@ -2948,4 +2948,4 @@ Conclusão
 Foi implementado um modelo de redes neurais com um dataset de três classes, contendo 999 imagens. O treinamento foi realizado em 12m 9s com os seguintes resultados:
 
 val Loss: 0.0429
-Best val Acc: 0.996134)
+Best val Acc: 0.996134
