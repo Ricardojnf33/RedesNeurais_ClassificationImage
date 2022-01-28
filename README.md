@@ -1,9 +1,27 @@
 Projeto de Redes Neurais - Professor : Vitor Casadei
-Aluno Ricardo José Nunes Fernandes
+Aluno: Ricardo José Nunes Fernandes
 Dataset - Lion ; Tiger ; Cow
 Pré-processameto de dados
-Iremos utilizar um dataset composto por três classes ( Lion ; Tiger ; Cow ) retirados do google imagens, organizado e postado em meu github (Ricardojnf33) Os dados estão divididos em dois conjuntos: "train" e "val" e são compostos por 333 iamgens de cada classe, totalizando 999 imagens.
+Iremos utilizar um dataset composto por três classes ( Lion ; Tiger ; Cow ), retirados do google imagens, organizados e postados em meu github (Ricardojnf33) Os dados estão divididos em dois conjuntos: "train" e "val" e são compostos por 333 iamgens de cada classe, totalizando 999 imagens.
 
+Estrutura de pastas
+PetImages/
+    train/
+        lion/ ### 333 fotos
+            ...
+        tiger/ ### 333 fotos
+            ...           
+        cow/ ### 333 fotos
+            ...
+    val/
+        lion/ ### 333 fotos
+            ...
+        tiger/ ### 333 fotos
+            ...
+        cow/ ### 333 fotos
+            ...
+
+            
 Abaixo está a maneira de preparar os dados:
 
 [4]
