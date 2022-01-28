@@ -46,14 +46,6 @@ Realizando o clone do repositório ( Github )
 # Comando para clonar os dados do dataset salvo no github
 
 !git clone https://github.com/Ricardojnf33/RedesNeurais_ClassificationImage.git
-Cloning into 'RedesNeurais_ClassificationImage'...
-remote: Enumerating objects: 330, done.
-remote: Counting objects: 100% (330/330), done.
-remote: Compressing objects: 100% (325/325), done.
-remote: Total 330 (delta 2), reused 327 (delta 2), pack-reused 0
-Receiving objects: 100% (330/330), 212.29 MiB | 31.58 MiB/s, done.
-Resolving deltas: 100% (2/2), done.
-Checking out files: 100% (999/999), done.
 
 # Reorganizando pastas para criação de diretórios
 
