@@ -49,18 +49,18 @@ Realizando o clone do repositório ( Github )
 
 # Reorganizando pastas para criação de diretórios
 
-import os
-import shutil
-import re
+ import os
+ import shutil
+ import re
 
-base_dir = "PetImages"
-try:
-    os.makedirs("PetImages")
-except OSError:
+ base_dir = "PetImages"
+ try:
+     os.makedirs("PetImages")
+ except OSError:
     print ("Creation of the directory %s failed")
-else:
+ else:
     print ("Successfully created the directory %s ")
-dataset_dir = "RedesNeurais_ClassificationImage/train"
+ dataset_dir = "RedesNeurais_ClassificationImage/train"
 
 # Criar pasta de treinamento
 files = os.listdir(base_dir)
