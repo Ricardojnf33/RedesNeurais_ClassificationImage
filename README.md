@@ -1,7 +1,7 @@
-Projeto de Redes Neurais (Cesar School) - Professor : Vitor Casadei
-Aluno: Ricardo José Nunes Fernandes
-Dataset - Lion ; Tiger ; Cow
-Pré-processameto de dados
+* Projeto de Redes Neurais (Cesar School) - Professor : Vitor Casadei
+* Aluno: Ricardo José Nunes Fernandes
+* Dataset - Lion ; Tiger ; Cow
+
 
 ## Overview
 
