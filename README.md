@@ -11,7 +11,7 @@ Foi utilizado um dataset composto por três classes ( Lion ; Tiger ; Cow ), reti
 
 * Google Coolab - Python versão 3.7.12
 * Pytorch
-* Resnet (Pré-treinada)
+* Resnet34 (Pré-treinada)
 
 ## Notebook
 
