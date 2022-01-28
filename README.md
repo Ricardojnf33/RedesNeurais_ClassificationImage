@@ -20,19 +20,19 @@ https://colab.research.google.com/drive/1WEAL3FJ0a9OPKrp-TVg3Qc2wWwIC7xhI?usp=sh
 # Estrutura de pastas
 
 PetImages/
-    train/
-        lion/ ### 333 fotos
+train/
+    lion/ ### 333 fotos
             ...
-        tiger/ ### 333 fotos
+    tiger/ ### 333 fotos
             ...           
-        cow/ ### 333 fotos
+    cow/ ### 333 fotos
             ...
-    val/
-        lion/ ### 333 fotos
-           ...
-        tiger/ ### 333 fotos
+val/
+    lion/ ### 333 fotos
             ...
-        cow/ ### 333 fotos
+    tiger/ ### 333 fotos
+            ...
+    cow/ ### 333 fotos
             ...
 
             
