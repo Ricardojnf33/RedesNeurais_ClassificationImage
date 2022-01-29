@@ -5,7 +5,7 @@
 
 ## Overview
 
-Foi utilizado um dataset composto por três classes ( Lion ; Tiger ; Cow ), retirados do google imagens, organizados e postados em meu github (Ricardojnf33) Os dados estão divididos em dois conjuntos: "train" e "val" e são compostos por 333 iamgens de cada classe, totalizando 999 imagens.
+Foi utilizado um dataset composto por três classes ( Lion ; Tiger ; Cow ), retirados do google imagens, organizados e postados em meu github (Ricardojnf33-https://github.com/Ricardojnf33/RedesNeurais_ClassificationImage). Os dados estão divididos em dois conjuntos: "train" e "val" e são compostos por 333 iamgens de cada classe, totalizando 999 imagens.
 
 ## Dependencies
 
