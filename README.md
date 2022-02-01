@@ -286,23 +286,24 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 #  *Executar o passe de treinamento para a frente
 #  *Calcule a perda
 #  *Faça a "back-propagation" e atualize os pesos com o otimizador
+
 ```
-    def train_model(model, criterion, optimizer, scheduler, num_epochs=10):
-    since = time.time()
+def train_model(model, criterion, optimizer, scheduler, num_epochs=10):
+since = time.time()
 
-    best_model_wts = copy.deepcopy(model.state_dict())
-    best_acc = 0.0
+best_model_wts = copy.deepcopy(model.state_dict())
+best_acc = 0.0
 
-    for epoch in range(num_epochs):
-        print('Epoch {}/{}'.format(epoch, num_epochs - 1))
-        print('-' * 10)
+for epoch in range(num_epochs):
+    print('Epoch {}/{}'.format(epoch, num_epochs - 1))
+    print('-' * 10)
 ```
 # Cada época tem uma fase de treinamento e validação
 ```   
-        for phase in ['train', 'val']:
-            if phase == 'train':
-                scheduler.step()
-                model.train()  # Definir modelo para o modo de treinamento
+for phase in ['train', 'val']:
+    if phase == 'train':
+        scheduler.step()
+        model.train()  # Definir modelo para o modo de treinamento
             else:
                 model.eval()   # Definir modelo para o modo de treinamento
 
@@ -417,6 +418,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer_ft = optim.SGD(res_mod.fc.parameters(), lr=0.001, momentum=0.9)
 
 exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
+```
 # E se quiséssemos descongelar seletivamente as camadas e ter os gradientes calculados para apenas algumas camadas escolhidas? Isso é possível? Sim, ele é.
 Vamos imprimir os filhos do modelo novamente para lembrar quais camadas/componentes ele possui:
 
