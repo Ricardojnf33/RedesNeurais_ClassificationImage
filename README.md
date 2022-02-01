@@ -49,7 +49,7 @@ val/
 !git clone https://github.com/Ricardojnf33/RedesNeurais_ClassificationImage.git
 
 # Reorganizando pastas para criação de diretórios
-'''python
+```
  import os
  import shutil
  import re
@@ -62,7 +62,7 @@ val/
  else:
     print ("Successfully created the directory %s ")
  dataset_dir = "RedesNeurais_ClassificationImage/train"
- '''
+ ```
 
 # Criar pasta de treinamento
 files = os.listdir(base_dir)
