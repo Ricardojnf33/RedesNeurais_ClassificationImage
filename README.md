@@ -40,10 +40,11 @@ val/
 
 # Comando de remoção dos diretórios para restart do modelo
 
-!rm -rf RedesNeurais_ClassificationImage/ val/ PetImages/ PetImagesPetImages/ PetImagesval/
-Realizando o clone do repositório ( Github )
+'''!rm -rf RedesNeurais_ClassificationImage/ val/ PetImages/ PetImagesPetImages/ PetImagesval/'''
 
-# Comando para clonar os dados do dataset salvo no github
+# Realizando o clone do repositório ( Github )
+
+## Comando para clonar os dados do dataset salvo no github
 
 !git clone https://github.com/Ricardojnf33/RedesNeurais_ClassificationImage.git
 
