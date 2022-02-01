@@ -231,7 +231,7 @@ def imshow(inp, title=None):
 ```
 inputs, classes = next(iter(dataloaders['train']))
 ```
-# Agora construímos uma grade de lote
+# Agora construímos uma rede do lote
 ```
 out = torchvision.utils.make_grid(inputs)
 
@@ -265,7 +265,7 @@ fc
 
 # Agora precisamos enviar nosso modelo para nosso dispositivo de treinamento. Também precisamos escolher o critério de perda e o otimizador que queremos usar com o modelo. CrossEntropyLoss e o otimizador SGD são boas escolhas, embora existam muitos outros.
 
-# Também escolheremos um agendador de taxa de aprendizado, que diminui a taxa de aprendizado do otimizador de horas extras e ajuda a evitar a não convergência devido a grandes taxas de aprendizado. Você pode aprender mais sobre programadores de taxa de aprendizado aqui se estiver curioso:
+# Também escolheremos um agendador de taxa de aprendizado, que diminui a taxa de aprendizado do otimizador de horas extras e ajuda a evitar a não convergência devido a grandes taxas de aprendizado.
 ```
 res_mod = res_mod.to(device)
 criterion = nn.CrossEntropyLoss()
@@ -302,9 +302,9 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
         for phase in ['train', 'val']:
             if phase == 'train':
                 scheduler.step()
-                model.train()  # Set model to training mode
+                model.train()  # Definir modelo para o modo de treinamento
             else:
-                model.eval()   # Set model to evaluate mode
+                model.eval()   # Definir modelo para o modo de treinamento
 
             current_loss = 0.0
             current_corrects = 0
@@ -346,7 +346,7 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(
                 phase, epoch_loss, epoch_acc))
 ```
-# Make a copy of the model if the accuracy on the validation set has improved
+# Faça uma cópia do modelo se a precisão no conjunto de validação melhorou
 ```
            if phase == 'val' and epoch_acc > best_acc:
                 best_acc = epoch_acc
@@ -359,9 +359,10 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
         time_since // 60, time_since % 60))
     print('Best val Acc: {:4f}'.format(best_acc))
 
-   # Now we'll load in the best model weights and return it
-    model.load_state_dict(best_model_wts)
-    return model
+   # Agora vamos carregar "best_model_wts"(melhores pesos de modelo) e devolver
+   
+```model.load_state_dict(best_model_wts)
+   return model
 ``` 
 # Função para visualização das predições realizadas pelo modelo
 ```
@@ -416,7 +417,10 @@ criterion = nn.CrossEntropyLoss()
 optimizer_ft = optim.SGD(res_mod.fc.parameters(), lr=0.001, momentum=0.9)
 
 exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
+# E se quiséssemos descongelar seletivamente as camadas e ter os gradientes calculados para apenas algumas camadas escolhidas? Isso é possível? Sim, ele é.
+Vamos imprimir os filhos do modelo novamente para lembrar quais camadas/componentes ele possui:
 
+```
 for name, child in res_mod.named_children():
     print(name)
     
@@ -430,7 +434,9 @@ layer3
 layer4
 avgpool
 fc
-
+```
+# Agora que sabemos quais são as camadas, podemos descongelar as que queremos, como apenas as camadas 3 e 4:
+```
 for name, child in res_mod.named_children():
     if name in ['layer3', 'layer4']:
         print(name + 'has been unfrozen.')
@@ -439,15 +445,15 @@ for name, child in res_mod.named_children():
     else:
         for param in child.parameters():
             param.requires_grad = False
-layer3has been unfrozen.
-layer4has been unfrozen.
-
+```
+# Também precisaremos atualizar o otimizador para refletir o fato de que queremos otimizar apenas determinadas camadas.
+```
 optimizer_conv = torch.optim.SGD(filter(lambda x: x.requires_grad, res_mod.parameters()), lr=0.001, momentum=0.9)
  
 base_model = train_model(res_mod, criterion, optimizer_conv, exp_lr_scheduler, num_epochs=3)
 visualize_model(base_model)
 plt.show()
-````
+```
 # Criando pasta models para salvar o modelo
 ```
 !mkdir models/
